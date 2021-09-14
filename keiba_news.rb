@@ -1,0 +1,1 @@
+ソース '<internal:/home/qzs04130/.rbenv/versions/3.0.2/lib/ruby/3.0.0/rubygems/core_ext/kernel_require.rb>' を読み込めませんでした: Failed。
