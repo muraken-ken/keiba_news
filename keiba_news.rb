@@ -45,7 +45,7 @@ url_list.each do |url|
     p file_name = "#{name}.txt"
     next if done?(file_name, update_at)
 
-    File.open("/mnt/c/TFJV/EX_DATA/#{file_name}", 'a+:sjis:utf-8') do |f|
+    File.open("/mnt/c/TFJV/EX_DATA/#{file_name}", 'a+:sjis:utf-8', :invalid => :replace, :undef => :replace) do |f|
       f.puts title
       f.puts
       f.puts "■ #{update_at}"
