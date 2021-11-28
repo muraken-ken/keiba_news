@@ -37,7 +37,11 @@ url_list.each do |url|
   update_at = article.css('.detail_kjnet_kiji dl dd').text
   next if done?('log.txt', update_at)
 
-  body = article.css('.detail_topics').inner_html.gsub!(/<br>/, "\n")
+  if article.css('.detail_topics').inner_html.gsub!(/<br>/, "\n")
+    body = article.css('.detail_topics').inner_html.gsub!(/<br>/, "\n")
+  else
+    body = article.css('.detail_topics').text
+  end
   horse_names = body.scan(/\p{Katakana}[\p{Katakana}ー]{1,8}/).uniq
   next unless horse_names
 
